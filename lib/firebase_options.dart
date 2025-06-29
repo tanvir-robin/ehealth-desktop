@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -66,4 +63,14 @@ class DefaultFirebaseOptions {
     authDomain: 'healthcare-algorix.firebaseapp.com',
     storageBucket: 'healthcare-algorix.firebasestorage.app',
   );
+
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyBxTwyEaVEgPOB3SYX5jAtYFdOGyMYgmm0',
+    appId: '1:447061470523:web:00f410aa308c2b2ebb1b1e',
+    messagingSenderId: '447061470523',
+    projectId: 'healthcare-algorix',
+    authDomain: 'healthcare-algorix.firebaseapp.com',
+    storageBucket: 'healthcare-algorix.firebasestorage.app',
+  );
+
 }
